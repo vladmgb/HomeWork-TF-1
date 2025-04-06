@@ -57,6 +57,5 @@ resource "docker_container" "nginx" {
 
 Вывод команды docker ps
 
-CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS  
-                NAMES
-2a995d96804d   53a18edff809   "/docker-entrypoint.…"   41 seconds ago   Up 29 seconds   0.0.0.0:9090->80/tcp   example_iPgGDgMyrgZUch9V
+![3](https://github.com/user-attachments/assets/8c874eec-47c2-47cf-8fdb-52d3a52e4d78)
+
