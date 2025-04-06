@@ -54,8 +54,15 @@ resource "docker_container" "nginx" {
   image = docker_image.nginx.image_id
   name  = "example_${random_password.random_string.result}"
 
-
-Вывод команды docker ps
+5.
+   Вывод команды docker ps
 
 ![3](https://github.com/user-attachments/assets/8c874eec-47c2-47cf-8fdb-52d3a52e4d78)
+
+
+6. Объясните своими словами, в чём может быть опасность применения ключа -auto-approve. Догадайтесь или нагуглите зачем может пригодиться данный ключ?
+   Вывод команды docker ps
+
+![4](https://github.com/user-attachments/assets/1c88d9f0-bcfe-43fe-81b5-4f6d028a9e2d)
+
 
