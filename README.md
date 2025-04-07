@@ -13,10 +13,10 @@ Cкриншот вывода команды ```terraform --version```
 personal.auto.tfvars
 
 3. Cекретное содержимое созданного ресурса random_password:
-"result": "iPgGDgMyrgZUch9V"
+`"result": "iPgGDgMyrgZUch9V"`
 
 4.
-terraform validate
+`terraform validate`
 
 4.1 Error: Missing name for resource
 
@@ -45,6 +45,7 @@ terraform validate
 
 Исправленный фрагмент коды:
 
+```HCL
 resource "docker_image" "nginx" {
   name         = "nginx:latest"
   keep_locally = true
@@ -53,16 +54,37 @@ resource "docker_image" "nginx" {
 resource "docker_container" "nginx" {
   image = docker_image.nginx.image_id
   name  = "example_${random_password.random_string.result}"
+```
 
 5.
-   Вывод команды docker ps
+   Вывод команды `docker ps`
 
 ![3](https://github.com/user-attachments/assets/8c874eec-47c2-47cf-8fdb-52d3a52e4d78)
 
 
 6. Объясните своими словами, в чём может быть опасность применения ключа -auto-approve. Догадайтесь или нагуглите зачем может пригодиться данный ключ?
-   Вывод команды docker ps
+   Вывод команды `docker ps`
 
-![4](https://github.com/user-attachments/assets/1c88d9f0-bcfe-43fe-81b5-4f6d028a9e2d)
+![4](https://github.com/user-attachments/assets/1c88d9f0-bcfe-43fe-81b5-4f6d028a9e2d
+
+7. Уничтожение ресурсов с помощью terraform.
+
+`terraform destroy`
+   
+Cодержимое файла terraform.tfstate:
+
+```HCL
+{
+  "version": 4,
+  "terraform_version": "1.11.3",
+  "serial": 11,
+  "lineage": "1c6f547c-38db-984c-c7c5-e6201214fd22",
+  "outputs": {},
+  "resources": [],
+  "check_results": null
+}
+```
+
+
 
 
